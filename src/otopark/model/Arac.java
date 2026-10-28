@@ -43,19 +43,6 @@ public class Arac {
 	public void setTelefon(String telefonNo) {
 		this.telefon = telefonNo;
 	}
-
-	
-
-
-
-
-
-
-
-
-
-
-
 }
 	
 	
