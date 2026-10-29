@@ -16,6 +16,6 @@ public class Tarife {
 	   this.saatlikUcret = saatlikUcret;
 	   this.ucretsizDakika = ucretsizDakika;
    }
-   //SÜRE FARKINDAN ÜCRET HESAPLAMA
+   //SÜRE FARKINDAN ÜCRET HESAPLAMA FONKSİYONU 
  
 }
