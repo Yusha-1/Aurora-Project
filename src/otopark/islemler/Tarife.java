@@ -1,7 +1,5 @@
 package otopark.islemler;
 
-import java.time.LocalDateTime;
-
 public class Tarife {
    private double saatlikUcret;
    private int ucretsizDakika;
