@@ -10,10 +10,7 @@ public class Tarife {
 	   this.ucretsizDakika = ucretsizDakika;
    }
    //KOPYA İŞLEMİ İÇİN ÇAĞIRILACAK YAPILANDIRICI
-   public Tarife(Tarife kopya) {
-	   this.saatlikUcret = saatlikUcret;
-	   this.ucretsizDakika = ucretsizDakika;
-   }
+
    //SÜRE FARKINDAN ÜCRET HESAPLAMA FONKSİYONU 
  
 }
