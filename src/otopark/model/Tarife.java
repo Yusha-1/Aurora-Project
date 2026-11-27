@@ -1,5 +1,5 @@
-package otopark.islemler;
-
+package otopark.model;
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Tarife {
@@ -7,26 +7,29 @@ public class Tarife {
    private int ucretsizDakika;
    
    //TEMEL YAPILANDIRICI
-   public Tarife(double saatlikUcret , int ucretsizDakika) {
+   public Tarife(double saatlikUcret , int ucretsizDakika) { 
+
+    if(saatlikUcret<0) 
+       throw new IllegalArgumentException("Saatlik ücret negatif olamaz.");
+
+    if(ucretsizDakika<0)
+       throw new IllegalArgumentException("Ücretsiz dakika negatif olamaz.");
+
 	   this.saatlikUcret = saatlikUcret;
 	   this.ucretsizDakika = ucretsizDakika;
    }
    //KOPYA İŞLEMİ İÇİN ÇAĞIRILACAK YAPILANDIRICI
   public Tarife(Tarife diger){
-   //KOPYA İŞLEMİ YANİ new Tarife(kopya) GirisKaydı yapılandırıcısında yapılacak
-      this.saatlikUcret=saatlikUcret;
-      this.ucretsizDakika=ucretsizDakika;
+   //KOPYA İŞLEMİ YANİ new Tarife(kopya) GirisKaydı yapılandırıcısında yapılacak   
+     this.saatlikUcret=saatlikUcret;
+     this.ucretsizDakika=ucretsizDakika;
 
   }
    //SÜRE FARKINDAN ÜCRET HESAPLAMA FONKSİYONU 
-  public double ucretHesapla(LocalDateTime giris,LocalDateTime cikis){
-    int yilFarki = cikis.getYear() - giris.getYear();
-    int gunFarki = cikis.getDayOfYear() - giris.getDayOfYear() +(yilFarki * 365);
-    int saatFarki = cikis.getHour() - giris.getHour();
-    int dakikaFarki = cikis.getMinute() - giris.getMinute();
+  public double ucretHesapla(Duration sure ){
 
-    long toplamDakika = (gunFarki * 24 * 60L) + (saatFarki * 60L) + dakikaFarki;
-
+   long toplamDakika = sure.toMinutes();
+  
     if (toplamDakika <0) 
       toplamDakika =0;
 
@@ -39,4 +42,11 @@ public class Tarife {
    public double getSaatlikUcret() { return saatlikUcret ;} 
    public int getucretsizDakika()  { return ucretsizDakika ;}
 
+   @Override 
+   public String toString(){
+     
+     return "Tarife {saatlikUcret=" + saatlikUcret + ", ucretsizDakika=" + ucretsizDakika + "}";
+   }
+
 }
+
