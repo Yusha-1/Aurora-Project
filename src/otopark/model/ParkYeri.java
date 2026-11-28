@@ -3,15 +3,15 @@ package otopark.model;
 public class ParkYeri {
 
 	
-	// park yeri sınıfı özellikleri
+	//  park yeri sinifi ozellikleri
 	
 	private String yerNo;
 	private boolean dolu;
 
-	// constructor tanımlayıp nesne oluşturduk
+	// constructor tanimlayip nesne olusturduk
 	public ParkYeri(String yerNo) {
 		this.yerNo = yerNo;
-		this.dolu = false ;    //en başta boş oldugu için false.
+		this.dolu = false ;    //en basta bos oldugu icin false.
 	}
 	
 	public void doldur() {
@@ -25,8 +25,6 @@ public class ParkYeri {
 	public boolean isDolu () {
 		return dolu;
 	}
-	
-	
 	
 	
 	
