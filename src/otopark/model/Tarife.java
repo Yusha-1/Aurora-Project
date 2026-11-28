@@ -1,6 +1,5 @@
 package otopark.model;
 import java.time.Duration;
-import java.time.LocalDateTime;
 
 public class Tarife {
    private double saatlikUcret;
